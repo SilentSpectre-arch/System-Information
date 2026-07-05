@@ -3,7 +3,7 @@
 echo "=== System Information ==="
 echo
 
-echo "CPU Info"
+echo "--CPU Info"
 echo 
 lscpu | grep "Model name" | xargs
 echo
@@ -12,6 +12,8 @@ echo
 echo "Physical Cores: $(lscpu | grep "Core(s) per socket:" | cut -d: -f2 | xargs)"
 echo
 echo "Logical Cores: $(nproc | xargs)"
+echo "CPU max MHz: $(lscpu | grep "CPU max MHz" | cut -d: -f2 | xargs)" 
+echo 
 echo "-----"
 echo
 echo "--RAM status"
